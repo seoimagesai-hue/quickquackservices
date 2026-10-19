@@ -232,7 +232,7 @@ export function CalendarView({
                   {dayAppts.map((a) => (
                     <div
                       key={a._id}
-                      className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/15 px-3 py-2 text-sm dark:border-white/15"
+                      className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border px-3 py-2 text-sm dark:border-border"
                     >
                       <div>
                         <p className="font-medium">

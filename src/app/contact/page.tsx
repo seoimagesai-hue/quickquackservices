@@ -46,34 +46,34 @@ export default function ContactPage() {
       <div className="container-page grid gap-12 py-16 sm:py-24 lg:grid-cols-2">
         <div>
           <p className="label-caps mb-4">Contact</p>
-          <h1 className="display-xl text-4xl text-white sm:text-5xl">
+          <h1 className="display-xl text-4xl text-foreground sm:text-5xl">
             Contact
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-white/60">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
             Send a support request. Messages are stored securely and emailed
             when a support address and email provider are configured.
           </p>
-          <div className="mt-10 space-y-4 text-sm text-white/60">
+          <div className="mt-10 space-y-4 text-sm text-muted-foreground">
             <p>
-              <span className="label-caps block text-white/40">
+              <span className="label-caps block text-muted-foreground">
                 Legal company
               </span>
               {brand.legalName}
             </p>
             <p>
-              <span className="label-caps block text-white/40">
+              <span className="label-caps block text-muted-foreground">
                 Company number
               </span>
               {brand.companyNumber}
             </p>
             <p>
-              <span className="label-caps block text-white/40">
+              <span className="label-caps block text-muted-foreground">
                 Registered office
               </span>
               {brand.registeredOffice}
             </p>
             <p>
-              <span className="label-caps block text-white/40">
+              <span className="label-caps block text-muted-foreground">
                 Customer support
               </span>
               <a
@@ -84,7 +84,7 @@ export default function ContactPage() {
               </a>
             </p>
             <p>
-              <span className="label-caps block text-white/40">
+              <span className="label-caps block text-muted-foreground">
                 General contact
               </span>
               <a
@@ -95,7 +95,7 @@ export default function ContactPage() {
               </a>
             </p>
             <p>
-              <span className="label-caps block text-white/40">Billing</span>
+              <span className="label-caps block text-muted-foreground">Billing</span>
               <a
                 className="text-[var(--cream)] transition hover:underline"
                 href={`mailto:${brand.billingEmail}`}
@@ -103,12 +103,12 @@ export default function ContactPage() {
                 {brand.billingEmail}
               </a>
             </p>
-            <p className="text-xs text-white/40">{brand.emailsConfiguredNote}</p>
+            <p className="text-xs text-muted-foreground">{brand.emailsConfiguredNote}</p>
           </div>
         </div>
 
-        <div className="border border-white/15 p-6 sm:p-8">
-          <h2 className="font-display text-2xl text-white">Support form</h2>
+        <div className="border border-border p-6 sm:p-8">
+          <h2 className="font-display text-2xl text-foreground">Support form</h2>
           <form onSubmit={onSubmit} className="mt-6 space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                 id="name"
                 name="name"
                 required
-                className="rounded-sm border-white/20 bg-black"
+                className="rounded-sm border-border bg-background"
               />
             </div>
             <div className="space-y-2">
@@ -126,7 +126,7 @@ export default function ContactPage() {
                 name="email"
                 type="email"
                 required
-                className="rounded-sm border-white/20 bg-black"
+                className="rounded-sm border-border bg-background"
               />
             </div>
             <div className="space-y-2">
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 id="subject"
                 name="subject"
                 required
-                className="rounded-sm border-white/20 bg-black"
+                className="rounded-sm border-border bg-background"
               />
             </div>
             <div className="space-y-2">
@@ -143,7 +143,7 @@ export default function ContactPage() {
               <select
                 id="category"
                 name="category"
-                className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
+                className="flex h-11 w-full rounded-sm border border-border bg-background px-3 text-sm text-foreground"
                 defaultValue="general"
               >
                 <option value="general" className="bg-white text-black">
@@ -170,7 +170,7 @@ export default function ContactPage() {
                 name="message"
                 rows={5}
                 required
-                className="rounded-sm border-white/20 bg-black"
+                className="rounded-sm border-border bg-background"
               />
             </div>
             <input

@@ -51,15 +51,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrument.variable} ${dmSans.variable} ${geistMono.variable} dark h-full`}
+      className={`${instrument.variable} ${dmSans.variable} ${geistMono.variable} h-full`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-black font-sans antialiased text-white">
+      <body className="flex min-h-full flex-col bg-background font-sans antialiased text-foreground">
         <OrganizationJsonLd />
         <ThemeProvider>
           <AuthSessionProvider>
             {children}
-            <Toaster richColors position="top-center" closeButton theme="dark" />
+            <Toaster richColors position="top-center" closeButton theme="light" />
             <CookieConsent />
           </AuthSessionProvider>
         </ThemeProvider>

@@ -45,7 +45,7 @@ export function AdminSidebar() {
               "flex items-center gap-3 rounded-sm px-3 py-2.5 text-sm font-medium transition-colors",
               active
                 ? "bg-primary text-primary-foreground"
-                : "text-white/60 hover:bg-white/5 hover:text-white"
+                : "text-muted-foreground hover:bg-accent hover:text-foreground"
             )}
           >
             <Icon className="size-4 shrink-0" strokeWidth={1.5} />
@@ -55,7 +55,7 @@ export function AdminSidebar() {
       })}
       <Link
         href="/dashboard"
-        className="mt-2 flex items-center gap-3 rounded-sm px-3 py-2.5 text-sm font-medium text-white/60 hover:bg-white/5 hover:text-white"
+        className="mt-2 flex items-center gap-3 rounded-sm px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
       >
         ← Business dashboard
       </Link>
@@ -69,7 +69,7 @@ export function AdminSidebar() {
 
   return (
     <>
-      <div className="flex items-center gap-2 border-b border-white/15 px-4 py-3 lg:hidden">
+      <div className="flex items-center gap-2 border-b border-border px-4 py-3 lg:hidden">
         <Button
           variant="outline"
           size="icon"
@@ -89,13 +89,13 @@ export function AdminSidebar() {
       )}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-white/15 bg-black transition-transform lg:static lg:translate-x-0",
+          "fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border bg-background transition-transform lg:static lg:translate-x-0",
           open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
-        <div className="flex items-center justify-between border-b border-white/15 p-4">
+        <div className="flex items-center justify-between border-b border-border p-4">
           <div>
-            <p className="label-caps text-white/40">{brand.name}</p>
+            <p className="label-caps text-muted-foreground">{brand.name}</p>
             <p className="font-display text-lg">Admin</p>
           </div>
           <Button

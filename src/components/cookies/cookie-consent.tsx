@@ -103,11 +103,11 @@ export function CookieConsent() {
       role="dialog"
       aria-label="Cookie consent"
       className={cn(
-        "fixed bottom-4 left-4 right-4 z-[100] mx-auto max-w-sm border border-white/15 bg-[#1a1614] p-5 sm:left-auto"
+        "fixed bottom-4 left-4 right-4 z-[100] mx-auto max-w-sm border border-border bg-white p-5 shadow-lg sm:left-auto"
       )}
     >
-      <p className="label-caps text-white/50">Cookies</p>
-      <p className="mt-3 text-sm leading-relaxed text-white/80">
+      <p className="label-caps text-muted-foreground">Cookies</p>
+      <p className="mt-3 text-sm leading-relaxed text-foreground/80">
         Necessary cookies keep the site working. Analytics cookies are optional
         and stay off until you accept.{" "}
         <Link href="/cookies" className="underline underline-offset-2">
@@ -116,12 +116,12 @@ export function CookieConsent() {
       </p>
 
       {showPrefs && (
-        <label className="mt-4 flex cursor-pointer items-center gap-3 text-sm text-white/70">
+        <label className="mt-4 flex cursor-pointer items-center gap-3 text-sm text-foreground/70">
           <input
             type="checkbox"
             checked={analytics}
             onChange={(e) => setAnalytics(e.target.checked)}
-            className="size-4 rounded-sm border-white/30 bg-black text-[var(--cream)] focus:ring-[var(--cream)]"
+            className="size-4 rounded-sm border-border bg-background text-[var(--cream)] focus:ring-[var(--cream)]"
           />
           Allow analytics cookies (optional)
         </label>

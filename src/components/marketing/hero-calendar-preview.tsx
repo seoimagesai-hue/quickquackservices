@@ -10,25 +10,25 @@ const slots = [
     time: "09:00",
     label: "Client consultation",
     client: "Booked",
-    color: "border-white/25 bg-white/[0.06] text-white",
+    color: "border-border bg-muted text-foreground",
   },
   {
     time: "10:30",
     label: "On-site service",
     client: "Booked",
-    color: "border-secondary/40 bg-secondary/10 text-white",
+    color: "border-secondary/40 bg-secondary/10 text-foreground",
   },
   {
     time: "13:00",
     label: "Follow-up appointment",
     client: "Booked",
-    color: "border-white/20 bg-white/[0.04] text-white",
+    color: "border-border bg-accent text-foreground",
   },
   {
     time: "15:30",
     label: "Open slot",
     client: null,
-    color: "border-dashed border-white/20 bg-transparent text-white/50",
+    color: "border-dashed border-border bg-transparent text-muted-foreground",
   },
 ];
 
@@ -44,28 +44,28 @@ export function HeroCalendarPreview({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative overflow-hidden border border-white/15 bg-black p-4 sm:p-6",
+        "relative overflow-hidden border border-border bg-background p-4 sm:p-6",
         className
       )}
     >
-      <div className="relative flex items-center justify-between gap-2 border-b border-white/15 pb-4">
+      <div className="relative flex items-center justify-between gap-2 border-b border-border pb-4">
         <div>
-          <p className="label-caps text-white/40">Week view</p>
-          <p className="mt-1 font-display text-xl text-white">
+          <p className="label-caps text-muted-foreground">Week view</p>
+          <p className="mt-1 font-display text-xl text-foreground">
             {format(focusDay, "MMMM yyyy")}
           </p>
         </div>
         <div className="flex items-center gap-1">
-          <span className="border border-white/20 p-2 text-white/50" aria-hidden>
+          <span className="border border-border p-2 text-muted-foreground" aria-hidden>
             <ChevronLeft className="size-4" />
           </span>
-          <span className="border border-white/20 p-2 text-white/50" aria-hidden>
+          <span className="border border-border p-2 text-muted-foreground" aria-hidden>
             <ChevronRight className="size-4" />
           </span>
         </div>
       </div>
 
-      <div className="relative mt-4 grid grid-cols-7 gap-1 text-center text-xs font-medium text-white/40">
+      <div className="relative mt-4 grid grid-cols-7 gap-1 text-center text-xs font-medium text-muted-foreground">
         {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
           <div key={d} className="py-1">
             {d}
@@ -86,7 +86,7 @@ export function HeroCalendarPreview({ className }: { className?: string }) {
                 "flex min-h-[64px] flex-col items-center justify-start border p-2 text-sm",
                 isToday
                   ? "border-[var(--cream)] bg-[var(--cream)]/10 font-medium text-[var(--cream)]"
-                  : "border-white/15 bg-white/[0.02] text-white/80"
+                  : "border-border bg-muted/40 text-foreground/80"
               )}
             >
               <span>{format(day, "d")}</span>
@@ -101,7 +101,7 @@ export function HeroCalendarPreview({ className }: { className?: string }) {
       </div>
 
       <div className="relative mt-5 space-y-2">
-        <p className="label-caps text-white/40">
+        <p className="label-caps text-muted-foreground">
           {format(focusDay, "EEEE · MMM d")}
         </p>
         {slots.map((slot, i) => (
@@ -134,12 +134,12 @@ export function HeroCalendarPreview({ className }: { className?: string }) {
 
       {!reduce && (
         <motion.div
-          className="absolute bottom-5 right-5 hidden max-w-[11rem] border border-white/20 bg-black px-3 py-2.5 sm:block"
+          className="absolute bottom-5 right-5 hidden max-w-[11rem] border border-border bg-background px-3 py-2.5 sm:block"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.4 }}
         >
-          <p className="label-caps text-white/40">Live booking</p>
+          <p className="label-caps text-muted-foreground">Live booking</p>
           <p className="mt-1 text-sm text-success">Confirmed</p>
         </motion.div>
       )}

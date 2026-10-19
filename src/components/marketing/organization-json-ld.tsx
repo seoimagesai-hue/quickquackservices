@@ -7,7 +7,7 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     name: brand.legalName,
     alternateName: brand.name,
-    url: brand.websiteUrl,
+    url: brand.officialWebsiteUrl,
     email: brand.contactEmail,
     address: {
       "@type": "PostalAddress",

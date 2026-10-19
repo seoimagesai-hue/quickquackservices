@@ -19,15 +19,15 @@ export default function PricingPage() {
       <div className="container-page py-16 sm:py-24">
         <div className="max-w-3xl">
           <p className="label-caps mb-4">Pricing</p>
-          <h1 className="display-xl text-4xl text-white sm:text-5xl">
+          <h1 className="display-xl text-4xl text-foreground sm:text-5xl">
             Plans that scale with your team
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-white/60">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
             Illustrative prices for planning. Live checkout requires Stripe
             configuration. Every plan includes a 14-day trial.
           </p>
           <div className="mt-8 flex items-center gap-3">
-            <Label htmlFor="billing" className="text-white/70">
+            <Label htmlFor="billing" className="text-foreground/70">
               Monthly
             </Label>
             <Switch
@@ -35,7 +35,7 @@ export default function PricingPage() {
               checked={yearly}
               onCheckedChange={setYearly}
             />
-            <Label htmlFor="billing" className="text-white/70">
+            <Label htmlFor="billing" className="text-foreground/70">
               Yearly{" "}
               <span className="text-success">
                 (save ~{yearlySavingsPercent(plans[1]!)}%)
@@ -43,7 +43,7 @@ export default function PricingPage() {
             </Label>
           </div>
           {!stripeConfigured && (
-            <p className="mt-6 border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm text-white/80">
+            <p className="mt-6 border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm text-foreground/80">
               Stripe is <strong className="text-secondary">not configured</strong>{" "}
               in this deployment. Checkout buttons will show an unconfigured
               state until keys are added.
@@ -51,7 +51,7 @@ export default function PricingPage() {
           )}
         </div>
 
-        <div className="mt-14 grid gap-px bg-white/15 lg:grid-cols-3">
+        <div className="mt-14 grid gap-px bg-border lg:grid-cols-3">
           {plans.map((plan) => {
             const price = yearly ? plan.yearlyPrice : plan.monthlyPrice;
             const period = yearly ? "/year" : "/mo";
@@ -60,8 +60,8 @@ export default function PricingPage() {
                 key={plan.id}
                 className={
                   plan.highlighted
-                    ? "flex flex-col bg-white/[0.04] p-6 sm:p-8"
-                    : "flex flex-col bg-black p-6 sm:p-8"
+                    ? "flex flex-col bg-muted p-6 sm:p-8"
+                    : "flex flex-col bg-background p-6 sm:p-8"
                 }
               >
                 {plan.highlighted && (
@@ -69,21 +69,21 @@ export default function PricingPage() {
                     Most popular
                   </span>
                 )}
-                <h2 className="font-display text-2xl text-white">{plan.name}</h2>
-                <p className="mt-2 text-sm text-white/50">{plan.description}</p>
-                <p className="mt-6 font-display text-4xl text-white">
+                <h2 className="font-display text-2xl text-foreground">{plan.name}</h2>
+                <p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
+                <p className="mt-6 font-display text-4xl text-foreground">
                   ${price}
-                  <span className="ml-1 text-base text-white/40">
+                  <span className="ml-1 text-base text-muted-foreground">
                     {period} illus.
                   </span>
                 </p>
-                <p className="mt-2 text-xs text-white/40">
+                <p className="mt-2 text-xs text-muted-foreground">
                   Limits: {plan.limits.staff} staff · {plan.limits.services}{" "}
                   services · {plan.limits.appointmentsPerMonth}/mo bookings
                 </p>
-                <ul className="mt-8 flex-1 space-y-3 text-sm text-white/65">
+                <ul className="mt-8 flex-1 space-y-3 text-sm text-foreground/70">
                   {plan.features.map((f) => (
-                    <li key={f} className="flex gap-2 border-t border-white/10 pt-3">
+                    <li key={f} className="flex gap-2 border-t border-border pt-3">
                       <Check
                         className="mt-0.5 size-4 shrink-0 text-success"
                         strokeWidth={1.5}
@@ -107,8 +107,8 @@ export default function PricingPage() {
           })}
         </div>
 
-        <div className="mt-16 max-w-3xl space-y-4 border border-white/15 p-6 text-sm text-white/60">
-          <h2 className="font-display text-xl text-white">Billing terms</h2>
+        <div className="mt-16 max-w-3xl space-y-4 border border-border p-6 text-sm text-muted-foreground">
+          <h2 className="font-display text-xl text-foreground">Billing terms</h2>
           <p>
             Subscriptions renew automatically at the chosen monthly or yearly
             interval until cancelled. Cancel anytime from the billing portal;

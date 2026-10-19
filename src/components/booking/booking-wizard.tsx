@@ -353,7 +353,7 @@ export function BookingWizard({ slug }: { slug: string }) {
           )}
           {needsAddress && <Badge variant="outline">On-site visit</Badge>}
         </div>
-        <h1 className="display-xl text-3xl text-white sm:text-4xl">{business.name}</h1>
+        <h1 className="display-xl text-3xl text-foreground sm:text-4xl">{business.name}</h1>
         {business.description && (
           <p className="mt-2 text-muted-foreground">
             {business.description}
@@ -386,7 +386,7 @@ export function BookingWizard({ slug }: { slug: string }) {
               type="button"
               onClick={() => afterServiceSelected(s.id)}
               className={cn(
-                "border border-white/15 bg-black p-4 text-left transition hover:border-white/40",
+                "border border-border bg-background p-4 text-left transition hover:border-border",
                 serviceId === s.id && "border-[var(--cream)] ring-1 ring-[var(--cream)]/40"
               )}
             >
@@ -425,7 +425,7 @@ export function BookingWizard({ slug }: { slug: string }) {
           </p>
           <button
             type="button"
-            className="w-full border border-white/15 bg-black p-4 text-left transition hover:border-white/40"
+            className="w-full border border-border bg-background p-4 text-left transition hover:border-border"
             onClick={() => {
               setStaffId("any");
               setStep(2);
@@ -437,7 +437,7 @@ export function BookingWizard({ slug }: { slug: string }) {
             <button
               key={s.id}
               type="button"
-              className="w-full border border-white/15 bg-black p-4 text-left transition hover:border-white/40"
+              className="w-full border border-border bg-background p-4 text-left transition hover:border-border"
               onClick={() => {
                 setStaffId(s.id);
                 setStep(2);
@@ -606,7 +606,7 @@ export function BookingWizard({ slug }: { slug: string }) {
                             id={`intake_${field.key}`}
                             name={`intake_${field.key}`}
                             required={field.required}
-                            className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
+                            className="flex h-11 w-full rounded-sm border border-border bg-background px-3 text-sm text-foreground"
                             defaultValue=""
                           >
                             <option value="" disabled className="bg-white text-black">

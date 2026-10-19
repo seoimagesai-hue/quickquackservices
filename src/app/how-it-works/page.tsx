@@ -37,26 +37,26 @@ export default function HowItWorksPage() {
       <div className="container-page py-16 sm:py-24">
         <div className="max-w-3xl">
           <p className="label-caps mb-4">How it works</p>
-          <h1 className="display-xl text-4xl text-white sm:text-5xl">
+          <h1 className="display-xl text-4xl text-foreground sm:text-5xl">
             How it works
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-white/60">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
             From signup to your first confirmed appointment.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-px bg-white/15">
+        <div className="mt-14 grid gap-px bg-border">
           {steps.map((s, i) => (
             <div
               key={s.title}
-              className="grid gap-4 bg-black p-6 sm:grid-cols-[5rem_1fr] sm:p-8"
+              className="grid gap-4 bg-background p-6 sm:grid-cols-[5rem_1fr] sm:p-8"
             >
-              <span className="font-display text-4xl text-white/20">
+              <span className="font-display text-4xl text-primary/25">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h2 className="font-display text-xl text-white">{s.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">
+                <h2 className="font-display text-xl text-foreground">{s.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {s.body}
                 </p>
               </div>
@@ -64,15 +64,28 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-3">
-          <Link href="/register" className="btn-cream">
-            Start Free Trial
-          </Link>
-          <Link href="/demo" className="btn-ghost-line">
-            View Demo
-          </Link>
-        </div>
       </div>
+
+      <section className="section-brand py-16 sm:py-20">
+        <div className="container-page flex flex-wrap items-center justify-between gap-6">
+          <div className="max-w-xl">
+            <h2 className="display-xl text-3xl sm:text-4xl">
+              Ready to go live?
+            </h2>
+            <p className="mt-3 text-white/70">
+              Start a free trial or explore the demo workspace first.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/register" className="btn-cream">
+              Start Free Trial
+            </Link>
+            <Link href="/demo" className="btn-ghost-line">
+              View Demo
+            </Link>
+          </div>
+        </div>
+      </section>
     </MarketingShell>
   );
 }

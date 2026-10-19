@@ -27,7 +27,7 @@ export default async function NotificationsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">{n.body}</p>
-              <p className="mt-2 text-xs text-white/40">
+              <p className="mt-2 text-xs text-muted-foreground">
                 {new Date(n.createdAt).toLocaleString()}
               </p>
             </CardContent>

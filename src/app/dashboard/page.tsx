@@ -61,7 +61,7 @@ export default async function DashboardPage() {
             <CardContent>
               <p className="text-3xl font-bold">{k.value}</p>
               {k.hint && (
-                <p className="mt-1 text-xs text-white/40">{k.hint}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{k.hint}</p>
               )}
             </CardContent>
           </Card>
@@ -91,7 +91,7 @@ export default async function DashboardPage() {
           }>).map((a) => (
             <div
               key={a._id}
-              className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/15 px-4 py-3 dark:border-white/15"
+              className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border px-4 py-3 dark:border-border"
             >
               <div>
                 <p className="font-medium">

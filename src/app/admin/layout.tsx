@@ -23,8 +23,8 @@ export default async function AdminLayout({
   if (user.platformRole !== "platform_admin") redirect("/dashboard");
 
   return (
-    <div className="min-h-screen bg-black">
-      <header className="border-b border-white/15 bg-black">
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border bg-background">
         <div className="container-page flex flex-wrap items-center gap-4 py-4">
           <p className="font-display text-lg">Platform Admin</p>
           <nav className="flex flex-wrap gap-1 text-sm">
@@ -32,7 +32,7 @@ export default async function AdminLayout({
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-sm px-3 py-1.5 text-white/60 transition hover:bg-white/5 hover:text-white"
+                className="rounded-sm px-3 py-1.5 text-muted-foreground transition hover:bg-accent hover:text-foreground"
               >
                 {l.label}
               </Link>

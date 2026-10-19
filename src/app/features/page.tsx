@@ -103,40 +103,51 @@ export default function FeaturesPage() {
       <div className="container-page py-16 sm:py-24">
         <div className="max-w-3xl">
           <p className="label-caps mb-4">Features</p>
-          <h1 className="display-xl text-4xl text-white sm:text-5xl">
+          <h1 className="display-xl text-4xl text-foreground sm:text-5xl">
             Built for real bookings — not demos
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-white/60">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
             Every feature below is implemented in the product, or clearly marked
             as needing an external provider.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-px bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
-            <div key={f.title} className="bg-black p-6 sm:p-8">
+            <div key={f.title} className="bg-background p-6 sm:p-8">
               <div className="mb-4 flex items-center justify-between gap-2">
-                <f.icon className="size-5 text-white/45" strokeWidth={1.5} />
+                <f.icon className="size-5 text-muted-foreground" strokeWidth={1.5} />
                 {f.config && (
                   <span className="border border-secondary/50 px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] text-secondary">
                     Provider config
                   </span>
                 )}
               </div>
-              <h2 className="font-display text-xl text-white">{f.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-white/55">
+              <h2 className="font-display text-xl text-foreground">{f.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {f.body}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-14">
+      </div>
+
+      <section className="section-brand py-16 sm:py-20">
+        <div className="container-page flex flex-wrap items-center justify-between gap-6">
+          <div className="max-w-xl">
+            <h2 className="display-xl text-3xl sm:text-4xl">
+              Put these features to work
+            </h2>
+            <p className="mt-3 text-white/70">
+              Start your free trial and set up your booking page in minutes.
+            </p>
+          </div>
           <Link href="/register" className="btn-cream">
             Start Free Trial
           </Link>
         </div>
-      </div>
+      </section>
     </MarketingShell>
   );
 }

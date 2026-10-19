@@ -61,7 +61,7 @@ export function SidebarNav(props: {
               "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
               active
                 ? "bg-primary text-primary-foreground"
-                : "text-white/60 hover:bg-white/5 hover:text-white"
+                : "text-muted-foreground hover:bg-accent hover:text-foreground"
             )}
           >
             <Icon className="size-4 shrink-0" />

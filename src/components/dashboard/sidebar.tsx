@@ -64,7 +64,7 @@ export function DashboardSidebar({
               "flex items-center gap-2 rounded-sm px-3 py-2.5 text-sm font-medium transition",
               active
                 ? "bg-primary text-primary-foreground"
-                : "text-white/60 hover:bg-white/5 hover:text-white"
+                : "text-muted-foreground hover:bg-accent hover:text-foreground"
             )}
           >
             <link.icon className="size-4" strokeWidth={1.5} />
@@ -77,7 +77,7 @@ export function DashboardSidebar({
 
   return (
     <>
-      <div className="flex items-center justify-between border-b border-white/15 bg-black px-4 py-3 lg:hidden">
+      <div className="flex items-center justify-between border-b border-border bg-background px-4 py-3 lg:hidden">
         <div>
           <p className="font-display text-base tracking-tight">
             {brand.name.toLowerCase()}
@@ -95,11 +95,11 @@ export function DashboardSidebar({
           onClick={() => setOpen(false)}
         >
           <aside
-            className="absolute left-0 top-0 flex h-full w-72 flex-col border-r border-white/15 bg-black"
+            className="absolute left-0 top-0 flex h-full w-72 flex-col border-r border-border bg-background"
             onClick={(e) => e.stopPropagation()}
           >
             {nav}
-            <form action={logoutAction} className="border-t border-white/15 p-3">
+            <form action={logoutAction} className="border-t border-border p-3">
               <Button
                 type="submit"
                 variant="ghost"
@@ -112,8 +112,8 @@ export function DashboardSidebar({
         </div>
       )}
 
-      <aside className="hidden w-64 shrink-0 flex-col border-r border-white/15 bg-black lg:flex">
-        <div className="border-b border-white/15 p-4">
+      <aside className="hidden w-64 shrink-0 flex-col border-r border-border bg-background lg:flex">
+        <div className="border-b border-border p-4">
           <p className="font-display text-lg tracking-tight">
             {brand.name.toLowerCase()}
           </p>
@@ -133,7 +133,7 @@ export function DashboardSidebar({
         {nav}
         <form
           action={logoutAction}
-          className="border-t border-white/15 p-3"
+          className="border-t border-border p-3"
         >
           <Button
             type="submit"

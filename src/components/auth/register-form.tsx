@@ -82,7 +82,7 @@ export function RegisterForm() {
             name="businessCategory"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="flex h-11 w-full rounded-sm border border-border bg-background px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             {BUSINESS_CATEGORIES.map((id) => (
               <option key={id} value={id} className="bg-white text-black">

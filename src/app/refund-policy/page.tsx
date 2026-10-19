@@ -35,7 +35,7 @@ export default function RefundPolicyPage() {
       <h2 className="text-xl font-semibold pt-4">How to contact us</h2>
       <p>
         Billing: {brand.billingEmail}. Support: {brand.supportEmail}. Website:{" "}
-        {brand.websiteUrl}.
+        {brand.officialWebsiteUrl}.
       </p>
     </LegalPage>
   );

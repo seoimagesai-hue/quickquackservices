@@ -39,6 +39,9 @@ export const brand = {
     "Companies House lists this company as Active with an active proposal to strike off. Confirm current status before relying on this filing.",
   /** Client-supplied production domain (not on Companies House record) */
   productionDomain: "quickquackservices.store",
+  /** Always the public production site — use for About / legal / schema display */
+  officialWebsiteUrl: PRODUCTION_URL,
+  /** Runtime app origin (may be localhost in .env.local for local links) */
   websiteUrl:
     process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || PRODUCTION_URL,
   tagline: "Book appointments that run themselves",
@@ -75,13 +78,13 @@ export const brand = {
     "Company email addresses are proposed. Do not treat delivery as working until the email provider, domain verification and DNS records are configured and tested.",
 } as const;
 
-/** Arrakis-inspired dark minimal palette (visual only). */
+/** Setmore-inspired light palette (visual only). */
 export const colors = {
-  primary: "#F2EBE0",
-  secondary: "#FF6A2B",
-  dark: "#000000",
-  background: "#000000",
-  accent: "#1A1A1A",
-  hero: "#000000",
-  success: "#3DCC8C",
+  primary: "#1B3D32",
+  secondary: "#2D6A4F",
+  dark: "#3B4C66",
+  background: "#FFFFFF",
+  accent: "#F0F5F3",
+  hero: "#FFFFFF",
+  success: "#2D6A4F",
 } as const;

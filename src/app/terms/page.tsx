@@ -14,7 +14,7 @@ export default function TermsPage() {
       </p>
       <p>
         These Terms govern use of the {brand.name} appointment booking platform
-        available at {brand.websiteUrl}.
+        available at {brand.officialWebsiteUrl}.
       </p>
       <h2 className="text-xl font-semibold pt-4">Accounts</h2>
       <p>

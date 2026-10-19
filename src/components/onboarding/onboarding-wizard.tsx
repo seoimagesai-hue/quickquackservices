@@ -287,7 +287,7 @@ export function OnboardingWizard(props: {
             <Label htmlFor="loc">Service location</Label>
             <select
               id="loc"
-              className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
+              className="flex h-11 w-full rounded-sm border border-border bg-background px-3 text-sm text-foreground"
               value={locationType}
               onChange={(e) =>
                 setLocationType(
@@ -339,7 +339,7 @@ export function OnboardingWizard(props: {
             team members from the Staff page after onboarding — email invites
             are supported.
           </p>
-          <div className="rounded-xl bg-muted p-4 text-sm bg-black">
+          <div className="rounded-xl bg-muted p-4 text-sm bg-background">
             Owner account is already linked as staff with full permissions.
           </div>
           <div className="flex gap-2">

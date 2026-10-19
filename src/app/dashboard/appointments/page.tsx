@@ -60,7 +60,7 @@ export default function AppointmentsPage() {
           <p className="text-sm text-muted-foreground">Filter, confirm, complete, or cancel.</p>
         </div>
         <select
-          className="h-10 rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
+          className="h-10 rounded-sm border border-border bg-background px-3 text-sm text-foreground"
           value={status}
           onChange={(e) => {
             setStatus(e.target.value);

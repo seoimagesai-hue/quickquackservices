@@ -40,10 +40,10 @@ export function SiteFooter() {
   }
 
   return (
-    <footer className="mt-auto border-t border-white/15 bg-black text-white">
+    <footer className="section-brand mt-auto border-t border-white/15">
       <div className="container-page py-16 sm:py-20">
         <div className="mb-14 max-w-2xl">
-          <h2 className="display-xl text-3xl text-white sm:text-4xl md:text-5xl">
+          <h2 className="display-xl text-3xl sm:text-4xl md:text-5xl">
             Bring bookings into the core of your operations
           </h2>
           <div className="mt-8">
@@ -57,10 +57,10 @@ export function SiteFooter() {
 
         <div className="grid gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-4">
-            <p className="font-display text-xl tracking-tight">
+            <p className="font-display text-xl tracking-tight text-white">
               {brand.name.toLowerCase()}
             </p>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
               {brand.description}
             </p>
             <form
@@ -73,16 +73,16 @@ export function SiteFooter() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
                 aria-label="Email address"
-                className="h-10 flex-1 border border-white/25 bg-transparent px-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/60"
+                className="h-10 flex-1 border border-white/30 bg-white/10 px-3 text-sm text-white outline-none placeholder:text-white/45 focus:border-white/60"
               />
               <button
                 type="submit"
-                className="h-10 shrink-0 bg-[var(--cream)] px-4 text-sm font-medium text-black transition hover:bg-white"
+                className="h-10 shrink-0 bg-white px-4 text-sm font-medium text-primary transition hover:bg-[#f0f5f3]"
               >
                 Subscribe
               </button>
             </form>
-            <p className="mt-2 text-[11px] text-white/40">
+            <p className="mt-2 text-[11px] text-white/50">
               Opens your email app to {brand.infoEmail}. No mailing list is
               claimed until a provider is configured.
             </p>
@@ -90,7 +90,7 @@ export function SiteFooter() {
 
           <div className="grid grid-cols-2 gap-8 md:col-span-5">
             <div>
-              <h3 className="label-caps text-white/70">Product</h3>
+              <h3 className="label-caps text-white/60">Product</h3>
               <ul className="mt-4 space-y-2.5">
                 {productLinks.map((l) => (
                   <li key={l.href}>
@@ -105,7 +105,7 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="label-caps text-white/70">Company</h3>
+              <h3 className="label-caps text-white/60">Company</h3>
               <ul className="mt-4 space-y-2.5">
                 {companyLinks.map((l) => (
                   <li key={l.href}>
@@ -122,7 +122,7 @@ export function SiteFooter() {
           </div>
 
           <div className="md:col-span-3">
-            <h3 className="label-caps text-white/70">Contact</h3>
+            <h3 className="label-caps text-white/60">Contact</h3>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li>
                 <a
@@ -144,8 +144,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/10 pt-6">
-          <p className="text-[11px] leading-relaxed text-white/45">
+        <div className="mt-14 border-t border-white/15 pt-6">
+          <p className="text-[11px] leading-relaxed text-white/50">
             © {year} {brand.legalName}. All rights reserved.
             <br />
             Registered in England and Wales · Company No. {brand.companyNumber}

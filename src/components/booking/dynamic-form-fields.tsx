@@ -36,7 +36,7 @@ export function DynamicFormFields({
           return (
             <p
               key={field.id}
-              className="rounded-sm bg-white/5 p-3 text-sm text-muted-foreground"
+              className="rounded-sm bg-accent p-3 text-sm text-muted-foreground"
             >
               {field.label}
               {field.helpText ? (
@@ -90,7 +90,7 @@ export function DynamicFormFields({
                 id={id}
                 name={id}
                 required={field.required}
-                className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
+                className="flex h-11 w-full rounded-sm border border-border bg-background px-3 text-sm text-foreground"
                 value={String(answers[field.id] ?? "")}
                 onChange={(e) => onChange(field.id, e.target.value)}
               >
@@ -119,7 +119,7 @@ export function DynamicFormFields({
                 {(field.options || []).map((opt) => (
                   <label
                     key={opt}
-                    className="flex items-center gap-2 text-sm text-white/70"
+                    className="flex items-center gap-2 text-sm text-foreground/70"
                   >
                     <input
                       type="radio"
@@ -155,7 +155,7 @@ export function DynamicFormFields({
                   return (
                     <label
                       key={opt}
-                      className="flex items-center gap-2 text-sm text-white/70"
+                      className="flex items-center gap-2 text-sm text-foreground/70"
                     >
                       <input
                         type="checkbox"
@@ -188,7 +188,7 @@ export function DynamicFormFields({
               {uploadsConfigured ? (
                 <Input id={id} name={id} type="file" disabled />
               ) : (
-                <p className="rounded-sm border border-dashed border-white/20 p-3 text-xs text-muted-foreground">
+                <p className="rounded-sm border border-dashed border-border p-3 text-xs text-muted-foreground">
                   File uploads are not configured for this workspace yet.
                   {field.required
                     ? " Please contact the business or remove the required file field."

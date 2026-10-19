@@ -42,15 +42,15 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-black lg:flex-row">
+    <div className="flex min-h-screen flex-col bg-background lg:flex-row">
       <DashboardSidebar
         businessName={business?.name}
         bookingSlug={business?.slug}
       />
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="hidden border-b border-white/15 bg-black px-6 py-4 lg:block">
-          <p className="label-caps text-white/40">
-            Signed in as <span className="normal-case tracking-normal text-white/70">{user.email}</span>
+        <header className="hidden border-b border-border bg-background px-6 py-4 lg:block">
+          <p className="label-caps text-muted-foreground">
+            Signed in as <span className="normal-case tracking-normal text-foreground/70">{user.email}</span>
           </p>
         </header>
         <main className="flex-1 p-4 sm:p-6 lg:p-8">{children}</main>

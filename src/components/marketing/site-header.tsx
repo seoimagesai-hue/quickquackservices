@@ -20,7 +20,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white text-black">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-white text-foreground">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-5 sm:h-16 sm:px-8 lg:px-10">
         <Link
           href="/"
@@ -28,12 +28,12 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
         >
           <span
-            className="flex size-7 shrink-0 items-center justify-center rounded-full border border-black/80"
+            className="flex size-7 shrink-0 items-center justify-center rounded-full border border-primary/80"
             aria-hidden
           >
-            <span className="size-3 rounded-full border border-black/60" />
+            <span className="size-3 rounded-full border border-primary/60" />
           </span>
-          <span className="truncate font-display text-lg tracking-tight sm:text-xl">
+          <span className="truncate font-display text-lg tracking-tight text-primary sm:text-xl">
             {brand.name.toLowerCase()}
           </span>
         </Link>
@@ -47,8 +47,8 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-3 py-2 text-[13px] text-black/65 transition-colors hover:text-black",
-                pathname === link.href && "text-black"
+                "px-3 py-2 text-[13px] text-foreground/70 transition-colors hover:text-primary",
+                pathname === link.href && "text-primary"
               )}
             >
               {link.label}
@@ -59,19 +59,19 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/login"
-            className="hidden text-[13px] text-black/70 transition hover:text-black sm:inline"
+            className="hidden text-[13px] text-foreground/70 transition hover:text-primary sm:inline"
           >
             Login
           </Link>
           <Link
             href="/register"
-            className="hidden rounded-sm bg-black px-4 py-2 text-[13px] font-medium text-white transition hover:bg-black/85 sm:inline-flex"
+            className="hidden rounded-sm bg-primary px-4 py-2 text-[13px] font-medium text-primary-foreground transition hover:bg-primary/90 sm:inline-flex"
           >
             Start Free Trial
           </Link>
           <button
             type="button"
-            className="flex h-9 w-10 items-center justify-center border border-black/25 text-black transition hover:border-black"
+            className="flex h-9 w-10 items-center justify-center border border-border text-foreground transition hover:border-primary"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
@@ -84,7 +84,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-black/10 bg-white px-5 pb-6 pt-4 sm:px-8 lg:px-10">
+        <div className="border-t border-border bg-white px-5 pb-6 pt-4 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-6xl">
             <nav className="grid gap-1 sm:grid-cols-2" aria-label="Mobile">
               {navLinks.map((link) => (
@@ -93,8 +93,8 @@ export function SiteHeader() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "border-b border-black/10 py-3 text-base text-black/80 transition hover:text-black",
-                    pathname === link.href && "text-black"
+                    "border-b border-border py-3 text-base text-foreground/80 transition hover:text-primary",
+                    pathname === link.href && "text-primary"
                   )}
                 >
                   {link.label}
@@ -103,7 +103,7 @@ export function SiteHeader() {
               <Link
                 href="/demo"
                 onClick={() => setOpen(false)}
-                className="border-b border-black/10 py-3 text-base text-black/80 transition hover:text-black"
+                className="border-b border-border py-3 text-base text-foreground/80 transition hover:text-primary"
               >
                 Demo
               </Link>
@@ -112,14 +112,14 @@ export function SiteHeader() {
               <Link
                 href="/login"
                 onClick={() => setOpen(false)}
-                className="btn-ghost-line border-black/30 text-black hover:border-black hover:bg-black/5"
+                className="btn-ghost-line"
               >
                 Login
               </Link>
               <Link
                 href="/register"
                 onClick={() => setOpen(false)}
-                className="rounded-sm bg-black px-5 py-2.5 text-sm font-medium text-white"
+                className="btn-cream"
               >
                 Start Free Trial
               </Link>
@@ -127,7 +127,7 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-      <div className="frame-rule bg-black/15" />
+      <div className="frame-rule" />
     </header>
   );
 }
