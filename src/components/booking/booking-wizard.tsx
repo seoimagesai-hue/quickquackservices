@@ -606,14 +606,14 @@ export function BookingWizard({ slug }: { slug: string }) {
                             id={`intake_${field.key}`}
                             name={`intake_${field.key}`}
                             required={field.required}
-                            className="flex h-11 w-full rounded-xl border border-white/15 bg-white px-3 text-sm dark:border-white/15 bg-black"
+                            className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
                             defaultValue=""
                           >
-                            <option value="" disabled>
+                            <option value="" disabled className="bg-white text-black">
                               Select…
                             </option>
                             {(field.options || []).map((opt) => (
-                              <option key={opt} value={opt}>
+                              <option key={opt} value={opt} className="bg-white text-black">
                                 {opt}
                               </option>
                             ))}

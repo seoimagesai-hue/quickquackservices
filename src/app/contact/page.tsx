@@ -146,11 +146,21 @@ export default function ContactPage() {
                 className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
                 defaultValue="general"
               >
-                <option value="general">General</option>
-                <option value="billing">Billing</option>
-                <option value="technical">Technical</option>
-                <option value="abuse">Abuse</option>
-                <option value="other">Other</option>
+                <option value="general" className="bg-white text-black">
+                  General
+                </option>
+                <option value="billing" className="bg-white text-black">
+                  Billing
+                </option>
+                <option value="technical" className="bg-white text-black">
+                  Technical
+                </option>
+                <option value="abuse" className="bg-white text-black">
+                  Abuse
+                </option>
+                <option value="other" className="bg-white text-black">
+                  Other
+                </option>
               </select>
             </div>
             <div className="space-y-2">

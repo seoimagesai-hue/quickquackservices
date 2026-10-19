@@ -60,19 +60,31 @@ export default function AppointmentsPage() {
           <p className="text-sm text-muted-foreground">Filter, confirm, complete, or cancel.</p>
         </div>
         <select
-          className="h-10 rounded-xl border border-white/15 bg-white px-3 text-sm dark:border-white/15 bg-black"
+          className="h-10 rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
           value={status}
           onChange={(e) => {
             setStatus(e.target.value);
             void refresh(e.target.value);
           }}
         >
-          <option value="">All statuses</option>
-          <option value="confirmed">Confirmed</option>
-          <option value="pending">Pending</option>
-          <option value="completed">Completed</option>
-          <option value="cancelled">Cancelled</option>
-          <option value="no_show">No-show</option>
+          <option value="" className="bg-white text-black">
+            All statuses
+          </option>
+          <option value="confirmed" className="bg-white text-black">
+            Confirmed
+          </option>
+          <option value="pending" className="bg-white text-black">
+            Pending
+          </option>
+          <option value="completed" className="bg-white text-black">
+            Completed
+          </option>
+          <option value="cancelled" className="bg-white text-black">
+            Cancelled
+          </option>
+          <option value="no_show" className="bg-white text-black">
+            No-show
+          </option>
         </select>
       </div>
 

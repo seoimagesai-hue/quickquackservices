@@ -82,10 +82,10 @@ export function RegisterForm() {
             name="businessCategory"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="flex h-11 w-full rounded-xl border border-white/15 bg-white px-3 text-sm dark:border-white/15 bg-black"
+            className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             {BUSINESS_CATEGORIES.map((id) => (
-              <option key={id} value={id}>
+              <option key={id} value={id} className="bg-white text-black">
                 {categoryPresets[id].label}
               </option>
             ))}

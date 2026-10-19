@@ -58,3 +58,8 @@ export function actionError(error: unknown): ActionResult {
   console.error(error);
   return { ok: false, error: "Something went wrong. Please try again." };
 }
+
+/** Strip Mongo ObjectIds/Dates so values are safe for Client Components. */
+export function serializeForClient<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T;
+}

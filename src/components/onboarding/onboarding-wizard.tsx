@@ -287,7 +287,7 @@ export function OnboardingWizard(props: {
             <Label htmlFor="loc">Service location</Label>
             <select
               id="loc"
-              className="flex h-11 w-full rounded-xl border border-input bg-background px-3 text-sm"
+              className="flex h-11 w-full rounded-sm border border-white/20 bg-black px-3 text-sm text-white"
               value={locationType}
               onChange={(e) =>
                 setLocationType(
@@ -295,10 +295,18 @@ export function OnboardingWizard(props: {
                 )
               }
             >
-              <option value="in_location">At business premises</option>
-              <option value="on_site">At customer location</option>
-              <option value="online">Online / virtual</option>
-              <option value="custom">Custom location</option>
+              <option value="in_location" className="bg-white text-black">
+                At business premises
+              </option>
+              <option value="on_site" className="bg-white text-black">
+                At customer location
+              </option>
+              <option value="online" className="bg-white text-black">
+                Online / virtual
+              </option>
+              <option value="custom" className="bg-white text-black">
+                Custom location
+              </option>
             </select>
           </div>
           {(locationType === "on_site" || preset.requireServiceAddress) && (

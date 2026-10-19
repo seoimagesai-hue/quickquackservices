@@ -6,6 +6,7 @@ import { Appointment, Customer, Service } from "@/models";
 import {
   actionError,
   resolveTenantContext,
+  serializeForClient,
   type ActionResult,
 } from "@/lib/actions/action-utils";
 import { requireBusinessAccess } from "@/lib/auth/permissions";
@@ -46,14 +47,10 @@ export async function listAppointmentsAction(params?: {
 
     return {
       ok: true,
-      data: {
+      data: serializeForClient({
         total,
-        items: items.map((a) => ({
-          ...a,
-          _id: String(a._id),
-          businessId: String(a.businessId),
-        })),
-      },
+        items,
+      }),
     };
   } catch (e) {
     return actionError(e);
@@ -170,16 +167,13 @@ export async function dashboardOverviewAction(): Promise<
 
     return {
       ok: true,
-      data: {
+      data: serializeForClient({
         todayCount,
         upcomingCount,
         confirmedCount,
         revenueCents: revenue[0]?.total || revenueAgg[0]?.total || 0,
-        upcoming: upcoming.map((a) => ({
-          ...a,
-          _id: String(a._id),
-        })),
-      },
+        upcoming,
+      }),
     };
   } catch (e) {
     return actionError(e);

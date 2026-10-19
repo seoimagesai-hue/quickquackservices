@@ -105,6 +105,13 @@
     min-height: 100vh;
   }
 
+  /* Native <option> lists use a light system surface; keep text readable
+     even when the closed <select> inherits white foreground. */
+  select option {
+    color: #0a0a0a;
+    background-color: #ffffff;
+  }
+
   h1,
   h2,
   h3,
