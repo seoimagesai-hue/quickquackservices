@@ -8,9 +8,9 @@ export default function TermsPage() {
   return (
     <LegalPage title="Terms of Service">
       <p>
-        Draft for review. Operated by {brand.legalName} (Company No.{" "}
-        {brand.companyNumber}), registered office {brand.registeredOffice}.
-        Governing law: {brand.jurisdiction}, United Kingdom.
+        Operated by {brand.legalName} (Company No. {brand.companyNumber}),
+        registered office {brand.registeredOffice}. Governing law:{" "}
+        {brand.jurisdiction}, United Kingdom.
       </p>
       <p>
         These Terms govern use of the {brand.name} appointment booking platform
@@ -26,10 +26,8 @@ export default function TermsPage() {
       <h2 className="text-xl font-semibold pt-4">Subscriptions and payments</h2>
       <p>
         Paid plans renew until cancelled through the billing portal or account
-        settings. Prices and plan limits are configured in the product; do not
-        treat marketing placeholders as binding quote without a live Stripe
-        checkout. Payment card data is processed by Stripe; we do not store card
-        numbers.
+        settings. Prices and plan limits are shown at checkout. Payment card
+        data is processed by Stripe; we do not store card numbers.
       </p>
       <h2 className="text-xl font-semibold pt-4">Bookings and customer data</h2>
       <p>

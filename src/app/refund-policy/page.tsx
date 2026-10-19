@@ -10,24 +10,21 @@ export default function RefundPolicyPage() {
   return (
     <LegalPage title="Refund & Cancellation Policy">
       <p>
-        Draft for review. Issued by {brand.legalName} (Company No.{" "}
-        {brand.companyNumber}), {brand.registeredOffice}. This draft does not
-        invent guaranteed refund amounts, statutory rights beyond what counsel
-        confirms, or VAT registration details.
+        Issued by {brand.legalName} (Company No. {brand.companyNumber}),{" "}
+        {brand.registeredOffice}.
       </p>
       <h2 className="text-xl font-semibold pt-4">Subscription cancellations</h2>
       <p>
         You may cancel a subscription from billing settings or the Stripe billing
         portal when configured. Access typically continues until the end of the
-        current paid period unless otherwise stated at checkout. Confirm exact
-        timing with live Stripe configuration and counsel.
+        current paid period unless otherwise stated at checkout.
       </p>
       <h2 className="text-xl font-semibold pt-4">Subscription refunds</h2>
       <p>
-        Refund eligibility for platform subscription fees is not finalised in
-        this draft. Do not publish specific refund windows or percentages until
-        approved. Contact {brand.billingEmail} with your account email and
-        invoice ID to request a review once policies are confirmed.
+        To request a refund review for platform subscription fees, contact{" "}
+        {brand.billingEmail} with your account email and invoice ID. Nothing in
+        this policy limits any rights you may have under applicable UK consumer
+        law.
       </p>
       <h2 className="text-xl font-semibold pt-4">Appointment deposits</h2>
       <p>

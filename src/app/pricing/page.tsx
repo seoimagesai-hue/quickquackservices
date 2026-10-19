@@ -108,20 +108,18 @@ export default function PricingPage() {
         </div>
 
         <div className="mt-16 max-w-3xl space-y-4 border border-white/15 p-6 text-sm text-white/60">
-          <h2 className="font-display text-xl text-white">
-            Billing terms (draft)
-          </h2>
+          <h2 className="font-display text-xl text-white">Billing terms</h2>
           <p>
             Subscriptions renew automatically at the chosen monthly or yearly
             interval until cancelled. Cancel anytime from the billing portal;
             access continues until period end.
           </p>
           <p>
-            Refunds follow the draft{" "}
+            Refunds follow the{" "}
             <Link href="/refund-policy" className="text-[var(--cream)] underline underline-offset-2">
               Refund Policy
             </Link>
-            . These pages are editable placeholders — not legal advice.
+            .
           </p>
         </div>
       </div>

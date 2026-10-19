@@ -51,8 +51,8 @@ export function PricingPageClient({ stripeConfigured }: { stripeConfigured: bool
           settings — see{" "}
           <Link href="/refund-policy" className="text-[var(--cream)] hover:underline">
             Refund Policy
-          </Link>{" "}
-          for draft terms.
+          </Link>
+          .
         </p>
       </div>
     </>

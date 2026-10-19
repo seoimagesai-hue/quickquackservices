@@ -8,8 +8,9 @@ export default function CookiesPage() {
   return (
     <LegalPage title="Cookie Policy">
       <p>
-        Draft cookie notice for {brand.name}, operated by {brand.legalName}{" "}
-        (Company No. {brand.companyNumber}). Contact: {brand.supportEmail}.
+        This Cookie Policy explains how {brand.name}, operated by{" "}
+        {brand.legalName} (Company No. {brand.companyNumber}), uses cookies.
+        Contact: {brand.supportEmail}.
       </p>
       <h2 className="text-xl font-semibold pt-4">Necessary cookies</h2>
       <p>
