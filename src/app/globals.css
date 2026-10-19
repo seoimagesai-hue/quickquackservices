@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+/**
+ * Visual system inspired by Arrakis (arrakis.tech):
+ * black canvas, white type, light serif display, thin framed rules.
+ * Content remains Quick Quack Services — layout/feel only.
+ * Reference: https://www.arrakis.tech/
+ */
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0c0c0c;
+  --card-foreground: #ffffff;
+  --primary: #f2ebe0;
+  --primary-foreground: #0a0a0a;
+  --secondary: #ff6a2b;
+  --secondary-foreground: #ffffff;
+  --accent: #1a1a1a;
+  --accent-foreground: #ffffff;
+  --muted: #121212;
+  --muted-foreground: #9a9a9a;
+  --success: #3dcc8c;
+  --destructive: #e5484d;
+  --border: #2a2a2a;
+  --ring: #f2ebe0;
+  --radius: 0.25rem;
+  --glass: rgba(0, 0, 0, 0.85);
+  --hero-solid: #000000;
+  --hero-gradient: linear-gradient(180deg, #000000 0%, #0a0e1a 100%);
+  --surface-gradient: #000000;
+  --section-warm: #080808;
+  --section-deep: #050508;
+  --rule: rgba(255, 255, 255, 0.22);
+  --cream: #f2ebe0;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0c0c0c;
+  --card-foreground: #ffffff;
+  --muted: #121212;
+  --muted-foreground: #9a9a9a;
+  --border: #2a2a2a;
+  --glass: rgba(0, 0, 0, 0.85);
+  --surface-gradient: #000000;
+  --section-warm: #080808;
+  --section-deep: #050508;
+  --hero-solid: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-success: var(--success);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-instrument);
+  --font-mono: var(--font-geist-mono);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-sm: calc(var(--radius) - 2px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #000;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: #000;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-instrument), ui-serif, Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .text-gradient {
+    color: var(--cream);
+  }
+
+  .bg-hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  .bg-hero-solid {
+    background: var(--hero-solid);
+  }
+
+  .bg-section-warm {
+    background: var(--section-warm);
+  }
+
+  .bg-section-deep {
+    background: var(--section-deep);
+  }
+
+  .shadow-glow {
+    box-shadow: none;
+  }
+
+  .shadow-warm {
+    box-shadow: none;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .card-soft {
+    @apply rounded-none border border-border bg-card transition;
+  }
+
+  .card-soft:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  /** Thin framed rule with bracket end-caps (Arrakis-style) */
+  .frame-rule {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background: var(--rule);
+  }
+
+  .frame-rule::before,
+  .frame-rule::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 1px;
+    height: 11px;
+    background: var(--rule);
+  }
+
+  .frame-rule::before {
+    left: 0;
+  }
+
+  .frame-rule::after {
+    right: 0;
+  }
+
+  .frame-box {
+    @apply relative border border-white/20;
+  }
+
+  .frame-box::before,
+  .frame-box::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .label-caps {
+    @apply text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  .display-xl {
+    font-family: var(--font-instrument), ui-serif, Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .btn-cream {
+    @apply inline-flex items-center justify-center rounded-sm bg-[var(--cream)] px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white;
+  }
+
+  .btn-ghost-line {
+    @apply inline-flex items-center justify-center rounded-sm border border-white/35 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition hover:border-white hover:bg-white/5;
+  }
+
+  .orbital-bg {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% 120%, rgba(20, 40, 90, 0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 10%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  }
+
+  .bg-pattern-dots {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+
+  .bg-pattern-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
