@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   CalendarCheck2,
@@ -73,28 +74,41 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden orbital-bg">
         <div className="container-page pb-16 pt-16 sm:pb-24 sm:pt-24">
-          <FadeIn>
-            <p className="label-caps mb-6 text-muted-foreground">
-              Appointment scheduling SaaS
-            </p>
-            <h1 className="display-xl max-w-4xl text-4xl text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem]">
-              {brand.tagline}
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
-              {brand.description}
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link href="/register" className="btn-cream">
-                Start Free Trial
-              </Link>
-              <Link href="/demo" className="btn-ghost-line">
-                View Demo
-              </Link>
-            </div>
-            <p className="mt-5 text-sm text-muted-foreground">
-              14-day trial · Illustrative pricing · Stripe optional until configured
-            </p>
-          </FadeIn>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <FadeIn>
+              <p className="label-caps mb-6 text-muted-foreground">
+                Appointment scheduling SaaS
+              </p>
+              <h1 className="display-xl max-w-xl text-4xl text-foreground sm:text-5xl md:text-6xl lg:text-[3.75rem]">
+                {brand.tagline}
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
+                {brand.description}
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link href="/register" className="btn-cream">
+                  Start Free Trial
+                </Link>
+                <Link href="/demo" className="btn-ghost-line">
+                  View Demo
+                </Link>
+              </div>
+              <p className="mt-5 text-sm text-muted-foreground">
+                14-day trial · Illustrative pricing · Stripe optional until configured
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.1} className="relative mx-auto w-full max-w-lg lg:max-w-none">
+              <Image
+                src="/images/hero-phones.png"
+                alt="Quick Quack Services mobile booking and calendar app preview"
+                className="mx-auto h-auto w-full max-w-md object-contain lg:max-w-none"
+                width={960}
+                height={720}
+                priority
+              />
+            </FadeIn>
+          </div>
 
           <FadeIn delay={0.12} className="mt-14">
             <div className="frame-box border-border p-2 sm:p-3">

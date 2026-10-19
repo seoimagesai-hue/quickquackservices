@@ -33,7 +33,7 @@ export function SiteHeader() {
           >
             <span className="size-3 rounded-full border border-primary/60" />
           </span>
-          <span className="truncate font-display text-lg tracking-tight text-primary sm:text-xl">
+          <span className="truncate font-display text-xl tracking-tight text-primary sm:text-2xl">
             {brand.name.toLowerCase()}
           </span>
         </Link>
@@ -47,7 +47,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-3 py-2 text-[13px] text-foreground/70 transition-colors hover:text-primary",
+                "px-3 py-2 text-[15px] text-foreground/70 transition-colors hover:text-primary",
                 pathname === link.href && "text-primary"
               )}
             >
@@ -59,13 +59,13 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/login"
-            className="hidden text-[13px] text-foreground/70 transition hover:text-primary sm:inline"
+            className="hidden text-[15px] text-foreground/70 transition hover:text-primary sm:inline"
           >
             Login
           </Link>
           <Link
             href="/register"
-            className="hidden rounded-sm bg-primary px-4 py-2 text-[13px] font-medium text-primary-foreground transition hover:bg-primary/90 sm:inline-flex"
+            className="hidden rounded-sm bg-primary px-4 py-2 text-[15px] font-medium text-primary-foreground transition hover:bg-primary/90 sm:inline-flex"
           >
             Start Free Trial
           </Link>
@@ -93,7 +93,7 @@ export function SiteHeader() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "border-b border-border py-3 text-base text-foreground/80 transition hover:text-primary",
+                    "border-b border-border py-3 text-lg text-foreground/80 transition hover:text-primary",
                     pathname === link.href && "text-primary"
                   )}
                 >
@@ -103,7 +103,7 @@ export function SiteHeader() {
               <Link
                 href="/demo"
                 onClick={() => setOpen(false)}
-                className="border-b border-border py-3 text-base text-foreground/80 transition hover:text-primary"
+                className="border-b border-border py-3 text-lg text-foreground/80 transition hover:text-primary"
               >
                 Demo
               </Link>
