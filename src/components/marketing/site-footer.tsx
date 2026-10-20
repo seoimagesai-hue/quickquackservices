@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { BrandLogo } from "@/components/brand-logo";
 import { brand } from "@/config/brand";
 import { toast } from "sonner";
 
@@ -57,9 +58,12 @@ export function SiteFooter() {
 
         <div className="grid gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-4">
-            <p className="font-display text-xl tracking-tight text-white">
-              {brand.name.toLowerCase()}
-            </p>
+            <Link
+              href="/"
+              className="inline-flex rounded-sm bg-white px-3 py-2"
+            >
+              <BrandLogo height={56} />
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
               {brand.description}
             </p>
@@ -83,8 +87,7 @@ export function SiteFooter() {
               </button>
             </form>
             <p className="mt-2 text-[11px] text-white/50">
-              Opens your email app to {brand.infoEmail}. No mailing list is
-              claimed until a provider is configured.
+              We&apos;ll get in touch at the address you share.
             </p>
           </div>
 

@@ -10,9 +10,6 @@ import { plans, yearlySavingsPercent } from "@/config/plans";
 
 export default function PricingPage() {
   const [yearly, setYearly] = useState(false);
-  const stripeConfigured = Boolean(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-  );
 
   return (
     <MarketingShell>
@@ -23,8 +20,8 @@ export default function PricingPage() {
             Plans that scale with your team
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Illustrative prices for planning. Live checkout requires Stripe
-            configuration. Every plan includes a 14-day trial.
+            Clear plans for solo providers and growing teams. Every plan includes
+            a 14-day free trial.
           </p>
           <div className="mt-8 flex items-center gap-3">
             <Label htmlFor="billing" className="text-foreground/70">
@@ -42,13 +39,6 @@ export default function PricingPage() {
               </span>
             </Label>
           </div>
-          {!stripeConfigured && (
-            <p className="mt-6 border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm text-foreground/80">
-              Stripe is <strong className="text-secondary">not configured</strong>{" "}
-              in this deployment. Checkout buttons will show an unconfigured
-              state until keys are added.
-            </p>
-          )}
         </div>
 
         <div className="mt-14 grid gap-px bg-border lg:grid-cols-3">
@@ -74,7 +64,7 @@ export default function PricingPage() {
                 <p className="mt-6 font-display text-4xl text-foreground">
                   ${price}
                   <span className="ml-1 text-base text-muted-foreground">
-                    {period} illus.
+                    {period}
                   </span>
                 </p>
                 <p className="mt-2 text-xs text-muted-foreground">

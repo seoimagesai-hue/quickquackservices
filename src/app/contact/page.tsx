@@ -103,7 +103,6 @@ export default function ContactPage() {
                 {brand.billingEmail}
               </a>
             </p>
-            <p className="text-xs text-muted-foreground">{brand.emailsConfiguredNote}</p>
           </div>
         </div>
 

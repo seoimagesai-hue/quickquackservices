@@ -64,7 +64,7 @@ function PlanCard({
         <CardDescription>{plan.description}</CardDescription>
         <div className="pt-4">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Illustrative price
+            Starting at
           </p>
           <p className="mt-1 flex items-baseline gap-1">
             <span className="text-4xl font-bold tracking-tight">${price}</span>

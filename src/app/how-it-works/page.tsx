@@ -73,7 +73,7 @@ export default function HowItWorksPage() {
               Ready to go live?
             </h2>
             <p className="mt-3 text-white/70">
-              Start a free trial or explore the demo workspace first.
+              Start a free trial or take a quick tour of the product.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

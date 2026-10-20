@@ -16,8 +16,8 @@ export default function RefundPolicyPage() {
       <h2 className="text-xl font-semibold pt-4">Subscription cancellations</h2>
       <p>
         You may cancel a subscription from billing settings or the Stripe billing
-        portal when configured. Access typically continues until the end of the
-        current paid period unless otherwise stated at checkout.
+        portal. Access typically continues until the end of the current paid
+        period unless otherwise stated at checkout.
       </p>
       <h2 className="text-xl font-semibold pt-4">Subscription refunds</h2>
       <p>

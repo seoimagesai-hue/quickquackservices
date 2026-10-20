@@ -26,7 +26,7 @@ const features = [
   {
     icon: Globe2,
     title: "24/7 online booking",
-    body: "Public booking pages at /book/[slug] with optional staff-specific flows.",
+    body: "Share a public booking page so customers can book your services online anytime.",
   },
   {
     icon: Clock,
@@ -56,19 +56,17 @@ const features = [
   {
     icon: Mail,
     title: "Email confirmations & reminders",
-    body: "Transactional email when Resend/SMTP is configured. Reminder cron with deduplication.",
+    body: "Automatic booking confirmations and reminders so customers never miss an appointment.",
   },
   {
     icon: MessageSquare,
     title: "SMS reminders",
-    body: "Requires external SMS provider configuration (SMS_PROVIDER / SMS_API_KEY). Marked unconfigured until set.",
-    config: true,
+    body: "Optional text reminders to cut no-shows and keep your calendar full.",
   },
   {
     icon: CreditCard,
     title: "Payments & deposits",
-    body: "Stripe Checkout for subscriptions and optional deposits. Never stores card data. Unconfigured until Stripe keys exist.",
-    config: true,
+    body: "Secure online payments and deposits at booking — card details stay with Stripe.",
   },
   {
     icon: Link2,
@@ -104,11 +102,11 @@ export default function FeaturesPage() {
         <div className="max-w-3xl">
           <p className="label-caps mb-4">Features</p>
           <h1 className="display-xl text-4xl text-foreground sm:text-5xl">
-            Built for real bookings — not demos
+            Everything you need to take bookings online
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Every feature below is implemented in the product, or clearly marked
-            as needing an external provider.
+            From public booking pages to staff calendars, reminders, and payments —
+            Quick Quack Services keeps your appointments organised in one place.
           </p>
         </div>
 
@@ -117,11 +115,6 @@ export default function FeaturesPage() {
             <div key={f.title} className="bg-background p-6 sm:p-8">
               <div className="mb-4 flex items-center justify-between gap-2">
                 <f.icon className="size-5 text-muted-foreground" strokeWidth={1.5} />
-                {f.config && (
-                  <span className="border border-secondary/50 px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] text-secondary">
-                    Provider config
-                  </span>
-                )}
               </div>
               <h2 className="font-display text-xl text-foreground">{f.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { brand } from "@/config/brand";
+import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -21,21 +21,13 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-white text-foreground">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-5 sm:h-16 sm:px-8 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:h-[4.5rem] sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5"
+          className="flex min-w-0 items-center"
           onClick={() => setOpen(false)}
         >
-          <span
-            className="flex size-7 shrink-0 items-center justify-center rounded-full border border-primary/80"
-            aria-hidden
-          >
-            <span className="size-3 rounded-full border border-primary/60" />
-          </span>
-          <span className="truncate font-display text-xl tracking-tight text-primary sm:text-2xl">
-            {brand.name.toLowerCase()}
-          </span>
+          <BrandLogo height={56} priority />
         </Link>
 
         <nav

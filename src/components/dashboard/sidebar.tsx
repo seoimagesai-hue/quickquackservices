@@ -19,7 +19,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
-import { brand } from "@/config/brand";
+import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { logoutAction } from "@/lib/actions/auth";
@@ -79,10 +79,8 @@ export function DashboardSidebar({
     <>
       <div className="flex items-center justify-between border-b border-border bg-background px-4 py-3 lg:hidden">
         <div>
-          <p className="font-display text-base tracking-tight">
-            {brand.name.toLowerCase()}
-          </p>
-          <p className="text-xs text-muted-foreground">{businessName}</p>
+          <BrandLogo height={44} />
+          <p className="mt-1 text-xs text-muted-foreground">{businessName}</p>
         </div>
         <Button size="icon" variant="outline" onClick={() => setOpen((v) => !v)}>
           {open ? <X /> : <Menu />}
@@ -114,10 +112,8 @@ export function DashboardSidebar({
 
       <aside className="hidden w-64 shrink-0 flex-col border-r border-border bg-background lg:flex">
         <div className="border-b border-border p-4">
-          <p className="font-display text-lg tracking-tight">
-            {brand.name.toLowerCase()}
-          </p>
-          <p className="truncate text-sm text-muted-foreground">
+          <BrandLogo height={48} />
+          <p className="mt-2 truncate text-sm text-muted-foreground">
             {businessName || "Workspace"}
           </p>
           {bookingSlug && (

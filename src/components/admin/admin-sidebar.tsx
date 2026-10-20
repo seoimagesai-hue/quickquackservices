@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { brand } from "@/config/brand";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { logoutAction } from "@/lib/actions/auth";
 
@@ -94,9 +94,9 @@ export function AdminSidebar() {
         )}
       >
         <div className="flex items-center justify-between border-b border-border p-4">
-          <div>
-            <p className="label-caps text-muted-foreground">{brand.name}</p>
-            <p className="font-display text-lg">Admin</p>
+          <div className="min-w-0">
+            <BrandLogo height={44} />
+            <p className="mt-1 font-display text-lg">Admin</p>
           </div>
           <Button
             variant="ghost"

@@ -36,7 +36,7 @@ const benefits = [
   {
     icon: BellRing,
     title: "Confirmations & reminders",
-    body: "Transactional email when configured. SMS optional via your provider.",
+    body: "Automatic email confirmations and reminders so customers show up on time.",
   },
   {
     icon: BarChart3,
@@ -77,7 +77,7 @@ export default function HomePage() {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <FadeIn>
               <p className="label-caps mb-6 text-muted-foreground">
-                Appointment scheduling SaaS
+                Appointment scheduling
               </p>
               <h1 className="display-xl max-w-xl text-4xl text-foreground sm:text-5xl md:text-6xl lg:text-[3.75rem]">
                 {brand.tagline}
@@ -94,7 +94,7 @@ export default function HomePage() {
                 </Link>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
-                14-day trial · Illustrative pricing · Stripe optional until configured
+                14-day free trial · Cancel anytime · Online booking in minutes
               </p>
             </FadeIn>
 
@@ -125,8 +125,7 @@ export default function HomePage() {
       <section className="section-brand py-12">
         <div className="container-page">
           <p className="label-caps mb-6 text-center text-white/65">
-            Built for service businesses — no fabricated customer counts or
-            invented testimonials.
+            Built for salons, trades, consultants, and local service teams
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2">
             {industries.map((item) => (
@@ -180,19 +179,13 @@ export default function HomePage() {
       <section className="border-y border-border bg-section-deep py-20 sm:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <FadeIn>
-            <p className="label-caps mb-4">
-              Product UI{" "}
-              <span className="ml-2 border border-secondary/60 px-2 py-0.5 text-[10px] tracking-[0.15em] text-secondary">
-                LIVE
-              </span>
-            </p>
+            <p className="label-caps mb-4">Dashboard</p>
             <h2 className="display-xl text-3xl text-foreground sm:text-4xl">
               A dashboard that mirrors how you actually work
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Manage appointments, staff, customers, and billing from one place.
-              Screenshots below are generated from the live application chrome —
-              not stock photography.
+              Manage appointments, staff, customers, and billing from one place —
+              built for busy service businesses that need clarity, not clutter.
             </p>
             <ul className="mt-8 space-y-4 text-sm text-foreground/70">
               <li className="flex gap-3">
@@ -230,7 +223,7 @@ export default function HomePage() {
                       {i === 2 ? "—" : i === 0 ? "8" : "24"}
                     </p>
                     <p className="mt-1 text-[11px] text-muted-foreground">
-                      {i === 2 ? "When payments exist" : "Live from your data"}
+                      {i === 2 ? "Paid bookings" : "From your calendar"}
                     </p>
                   </div>
                 ))}
@@ -287,11 +280,10 @@ export default function HomePage() {
             <div className="max-w-xl">
               <p className="label-caps mb-4">Pricing</p>
               <h2 className="display-xl text-3xl text-foreground sm:text-4xl">
-                Simple, illustrative pricing
+                Simple, transparent pricing
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Prices below are labelled illustrative until live Stripe prices
-                are configured. Yearly billing saves about{" "}
+                Choose the plan that fits your team. Yearly billing saves about{" "}
                 {yearlySavingsPercent(highlighted)}% on {highlighted.name}.
               </p>
             </div>
@@ -318,7 +310,7 @@ export default function HomePage() {
                 <p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
                 <p className="mt-6 font-display text-4xl text-foreground">
                   ${plan.monthlyPrice}
-                  <span className="ml-1 text-base text-muted-foreground">/mo illus.</span>
+                  <span className="ml-1 text-base text-muted-foreground">/mo</span>
                 </p>
                 <ul className="mt-6 space-y-2.5 text-sm text-muted-foreground">
                   {plan.features.slice(0, 5).map((f) => (

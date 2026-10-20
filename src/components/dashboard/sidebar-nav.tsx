@@ -17,8 +17,8 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
-import { brand } from "@/config/brand";
 import { Button } from "@/components/ui/button";
 import { BusinessSwitcher } from "@/components/dashboard/business-switcher";
 import { logoutAction } from "@/lib/actions/auth";
@@ -108,11 +108,9 @@ export function SidebarNav(props: {
         )}
       >
         <div className="flex items-center justify-between border-b border-border p-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              {brand.name}
-            </p>
-            <p className="truncate font-semibold">{props.businessName}</p>
+          <div className="min-w-0">
+            <BrandLogo height={44} />
+            <p className="mt-1 truncate font-semibold">{props.businessName}</p>
           </div>
           <Button
             variant="ghost"

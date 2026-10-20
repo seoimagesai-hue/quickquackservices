@@ -36,12 +36,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: brand.seoTitle,
     description: brand.seoDescription,
     siteName: brand.name,
     url: brand.websiteUrl,
     type: "website",
+    images: [{ url: "/logo.png" }],
   },
 };
 
